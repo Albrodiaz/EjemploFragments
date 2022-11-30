@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.ejemplofragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -9,8 +8,8 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <uses-feature android:name="android.hardware.bluetooth" />
-    <uses-feature android:name="android.hardware.nfc"/>
-    <uses-feature android:name="android.hardware.camera.any"/>
+    <uses-feature android:name="android.hardware.nfc" />
+    <uses-feature android:name="android.hardware.camera.any" />
 
     <application
         android:allowBackup="true"
@@ -23,17 +22,24 @@
         android:theme="@style/Theme.EjemploFragment"
         tools:targetApi="31">
         <activity
-            android:name=".viewPager.ActivityViewPager"
-            android:exported="false" />
-        <activity
-            android:name=".comunicaciónFragments.MainActivity"
-            android:configChanges="orientation"
+            android:name=".comunicacionFragments1.DialogsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".viewPager.ActivityViewPager"
+            android:exported="false" />
+        <activity
+            android:name=".comunicaciónFragments.MainActivity"
+            android:configChanges="orientation"
+            android:exported="false">
         </activity>
     </application>
 

@@ -22,9 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         viewModel = new ViewModelProvider(this).get(FragmentsViewModel.class);
 
-        binding.mainToolbar.setNavigationOnClickListener(v-> {
-            startActivity(new Intent(this, ActivityViewPager.class));
-        });
+        binding.mainToolbar.setNavigationOnClickListener(v -> startActivity(new Intent(this, ActivityViewPager.class)));
 
         binding.btnFragment1.setOnClickListener(v -> getSupportFragmentManager().beginTransaction()
                 .replace(binding.fragment1Container.getId(), FirstFragment.newInstance(), "FirstFragment")
@@ -34,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 .replace(binding.fragment2Container.getId(), SecondFragment.newInstance(), "SecondFragment")
                 .commit());
 
-        viewModel.getToolbarTitle().observe(this, title->{
+        viewModel.getToolbarTitle().observe(this, title -> {
             if (title != null) {
                 binding.mainToolbar.setTitle(title);
             } else {
