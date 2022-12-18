@@ -1,8 +1,12 @@
 package com.example.ejemplofragment.viewPager;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
+import android.icu.lang.UCharacter;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.ejemplofragment.R;
 import com.example.ejemplofragment.databinding.ActivityViewPagerBinding;
@@ -22,6 +26,8 @@ public class ActivityViewPager extends AppCompatActivity {
 
     private void initViewPagerTabs() {
         binding.viewPagerContainer.setAdapter(new myViewPagerAdapter(this));
+        //Animación para el cambio de página
+        binding.viewPagerContainer.setPageTransformer(new ZoomOutPageTransformer());
 
         new TabLayoutMediator(binding.mainTab, binding.viewPagerContainer, (tab, position) -> {
            switch (position) {

@@ -1,4 +1,4 @@
-package com.example.ejemplofragment.comunicaciónFragments;
+package com.example.ejemplofragment.viewmodelcom;
 
 import android.os.Bundle;
 

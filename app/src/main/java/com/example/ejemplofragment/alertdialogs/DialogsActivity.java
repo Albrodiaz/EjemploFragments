@@ -1,10 +1,10 @@
-package com.example.ejemplofragment.comunicacionFragments1;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.ejemplofragment.alertdialogs;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ejemplofragment.R;
 import com.example.ejemplofragment.databinding.ActivityDialogsBinding;
@@ -23,14 +23,6 @@ public class DialogsActivity extends AppCompatActivity {
 
 
         binding.mainToolbar.setNavigationOnClickListener(v -> showMultipleChoiceAlert());
-
-        binding.btnFragment1.setOnClickListener(v -> getSupportFragmentManager().beginTransaction()
-                .replace(binding.fragment1Container.getId(), FragmentThird.newInstance(), "FirstFragment")
-                .commit());
-
-        binding.btnFragment2.setOnClickListener(v -> getSupportFragmentManager().beginTransaction()
-                .replace(binding.fragment2Container.getId(), FragmentFourth.newInstance(), "SecondFragment")
-                .commit());
     }
 
     private void showAlertDialog() {

@@ -16,23 +16,15 @@ public class myViewPagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        Fragment fragment = null;
         switch (position) {
-            case 0:
-                fragment = FragmentOne.newInstance();
-                break;
-            case 1:
-                fragment = FragmentTwo.newInstance();
-                break;
-            case 2:
-                fragment = FragmentThree.newInstance();
-                break;
             default:
-                Log.e("FragmentError", "Posición no encontrada" + position);
+            case 0:
+                return FragmentOne.newInstance();
+            case 1:
+                return FragmentTwo.newInstance();
+            case 2:
+                return FragmentThree.newInstance();
         }
-
-        assert fragment != null;
-        return fragment;
     }
 
     @Override

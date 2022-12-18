@@ -1,4 +1,4 @@
-package com.example.ejemplofragment.comunicaciónFragments;
+package com.example.ejemplofragment.viewmodelcom;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -24,13 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding.mainToolbar.setNavigationOnClickListener(v -> startActivity(new Intent(this, ActivityViewPager.class)));
 
-        binding.btnFragment1.setOnClickListener(v -> getSupportFragmentManager().beginTransaction()
-                .replace(binding.fragment1Container.getId(), FirstFragment.newInstance(), "FirstFragment")
-                .commit());
-
-        binding.btnFragment2.setOnClickListener(v -> getSupportFragmentManager().beginTransaction()
-                .replace(binding.fragment2Container.getId(), SecondFragment.newInstance(), "SecondFragment")
-                .commit());
+        binding.btnFragment1.setOnClickListener(v -> inflateFragment1());
+        binding.btnFragment2.setOnClickListener(v -> inflateFragment2());
 
         viewModel.getToolbarTitle().observe(this, title -> {
             if (title != null) {
@@ -39,5 +34,18 @@ public class MainActivity extends AppCompatActivity {
                 binding.mainToolbar.setTitle(getString(R.string.app_name));
             }
         });
+    }
+
+    private void inflateFragment1() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(binding.fragment1Container.getId(), FirstFragment.newInstance(), "FirstFragment")
+                .commit();
+
+    }
+
+    private void inflateFragment2() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(binding.fragment2Container.getId(), SecondFragment.newInstance(), "SecondFragment")
+                .commit();
     }
 }

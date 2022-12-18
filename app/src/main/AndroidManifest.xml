@@ -22,24 +22,35 @@
         android:theme="@style/Theme.EjemploFragment"
         tools:targetApi="31">
         <activity
-            android:name=".comunicacionFragments1.DialogsActivity"
+            android:name=".fragmentcom.ComunicationsActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".alertdialogs.DialogsActivity"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".viewPager.ActivityViewPager"
-            android:exported="false" />
+            android:exported="true" >
+
+        </activity>
         <activity
-            android:name=".comunicaciónFragments.MainActivity"
+            android:name=".viewmodelcom.MainActivity"
             android:configChanges="orientation"
-            android:exported="false">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
